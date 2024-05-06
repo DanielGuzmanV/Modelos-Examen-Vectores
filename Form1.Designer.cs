@@ -42,6 +42,8 @@
             this.modelosDeExamenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregunta1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregunta2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,7 +142,9 @@
             // 
             this.modelosDeExamenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pregunta1ToolStripMenuItem,
-            this.pregunta2ToolStripMenuItem});
+            this.pregunta2ToolStripMenuItem,
+            this.pregunta3ToolStripMenuItem,
+            this.pregunta4ToolStripMenuItem});
             this.modelosDeExamenToolStripMenuItem.Name = "modelosDeExamenToolStripMenuItem";
             this.modelosDeExamenToolStripMenuItem.Size = new System.Drawing.Size(200, 32);
             this.modelosDeExamenToolStripMenuItem.Text = "Modelos de examen";
@@ -158,6 +162,20 @@
             this.pregunta2ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
             this.pregunta2ToolStripMenuItem.Text = "Pregunta 2";
             this.pregunta2ToolStripMenuItem.Click += new System.EventHandler(this.pregunta2ToolStripMenuItem_Click);
+            // 
+            // pregunta3ToolStripMenuItem
+            // 
+            this.pregunta3ToolStripMenuItem.Name = "pregunta3ToolStripMenuItem";
+            this.pregunta3ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta3ToolStripMenuItem.Text = "Pregunta 3";
+            this.pregunta3ToolStripMenuItem.Click += new System.EventHandler(this.pregunta3ToolStripMenuItem_Click);
+            // 
+            // pregunta4ToolStripMenuItem
+            // 
+            this.pregunta4ToolStripMenuItem.Name = "pregunta4ToolStripMenuItem";
+            this.pregunta4ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta4ToolStripMenuItem.Text = "Pregunta 4";
+            this.pregunta4ToolStripMenuItem.Click += new System.EventHandler(this.pregunta4ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -197,6 +215,8 @@
         private System.Windows.Forms.ToolStripMenuItem modelosDeExamenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregunta1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregunta2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregunta3ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregunta4ToolStripMenuItem;
     }
 }
 

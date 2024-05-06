@@ -44,6 +44,18 @@ namespace newVectores2
             vec1.cargarSinRepet(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text));
         }
 
+        private void pregunta3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.elimPosMultiplos(int.Parse(textBox1.Text));
+            textBox5.Text = vec1.descargar();
+        }
+
+        private void pregunta4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.segmentarRepetYNoRepet();
+            textBox5.Text = vec1.descargar();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             vec1 = new classVector();

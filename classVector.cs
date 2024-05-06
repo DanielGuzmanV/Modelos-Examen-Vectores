@@ -93,6 +93,20 @@ namespace newVectores2
             return respu;
         }
 
+        // Funcion para frecuencia de un elemento
+        public int frecuenciaElem(int number)
+        {
+            int conta = 0;
+            for(int ter = 1; ter <= this.cantidad; ter++)
+            {
+                if(vector[ter] == number)
+                {
+                    conta++;
+                }
+            }
+            return conta;
+        }
+
 
         // Modelos de examen *********************************
 
@@ -148,6 +162,44 @@ namespace newVectores2
                     vector[this.cantidad] = ele;
                 }
             } while (!(this.cantidad == cant));
-        }        
+        }
+        
+        // Pregunta 3: Eliminar los elementos de posicion multiplos, donde solo
+        // estaran los elementos que no seran multiplos
+
+        public void elimPosMultiplos(int number)
+        {
+            int conta, resi;
+            conta = 0;
+            for(int ter = 1; ter <= this.cantidad; ter++)
+            {
+                resi = ter % number;
+                if(resi != 0)
+                {
+                    conta++;
+                    vector[conta] = vector[ter];
+                }
+            }
+            this.cantidad = conta;
+        }
+
+        // Pregunta 4: Segmentar el vector en repetidos y no repetidos
+        // ordenados descendentemente
+
+        public void segmentarRepetYNoRepet()
+        {
+            for(int ter1 = 1; ter1 < this.cantidad; ter1++)
+            {
+                for(int ter2 = ter1 + 1; ter2 <= this.cantidad; ter2++)
+                {
+                    if((frecuenciaElem(vector[ter2]) != 1) && (!(frecuenciaElem(vector[ter1]) != 1)) ||
+                        (frecuenciaElem(vector[ter2]) != 1) && (frecuenciaElem(vector[ter1]) != 1) && (vector[ter2] > vector[ter1]) ||
+                        (!(frecuenciaElem(vector[ter2]) != 1)) && (!(frecuenciaElem(vector[ter1]) !=1 )) && (vector[ter2] > vector[ter1]))
+                    {
+                        this.intercambio(ter2, ter1);
+                    }
+                }
+            }
+        }
     }
 }
