@@ -54,6 +54,7 @@ namespace newVectores2
         }
 
         // *** Funciones auxiliares ***
+        // ----------------------------
 
         // Funcion para intercambio de elementos -------------
         public void intercambio(int date1, int date2)
@@ -70,6 +71,7 @@ namespace newVectores2
             {
                 for(int ter2 = ter1 + 1; ter2 <= fin; ter2++)
                 {
+                    // Hacemos el cambio aqui para ordenar de mayor a menor o de menor a mayor (solo por parametros)
                     if(vector[ter2] < vector[ter1])
                     {
                         this.intercambio(ter2, ter1);
@@ -107,6 +109,20 @@ namespace newVectores2
             return conta;
         }
 
+        // Funcion auxiliar para ordenar sin parametros
+        public void ordenSinparametros()
+        {
+            for(int ter1 = 1; ter1 < this.cantidad; ter1++)
+            {
+                for (int ter2 = ter1 + 1; ter2 <= this.cantidad; ter2++)
+                {
+                    if(vector[ter2] < vector[ter1])
+                    {
+                        this.intercambio(ter2, ter1);
+                    }
+                }
+            }
+        }
 
         // Modelos de examen *********************************
 
@@ -198,6 +214,89 @@ namespace newVectores2
                     {
                         this.intercambio(ter2, ter1);
                     }
+                }
+            }
+        }
+        
+        // Pregunta 5: Encontrar elemento y frecuencia del rango a y b, donde los elementos
+        // estan ordenados descendentemente (mayor a menor) y el resultado es de aquellos que tienen frecuencia
+        public void elementFrecu(int ini, int fin, ref classVector vecEle, ref classVector vecFrecu)
+        {
+            vecEle.cantidad = 0;
+            vecFrecu.cantidad = 0;
+
+            int ele, frecu, ter;
+            ter = ini;
+            this.ordenParametros(ter, fin);
+            while(ter <= fin)
+            {
+                frecu = 0;
+                ele = vector[ter];
+                while(ter <= fin && vector[ter] == ele)
+                {
+                    ter++; frecu++;
+                }
+                if(frecu != 1)
+                {
+                    vecEle.cargarElexEle(ele);
+                    vecFrecu.cargarElexEle(frecu);
+                    // Para ordenar de mayor a menor cambiamos la funcion auxiliar
+                    // ordenParametros(), osea de "<" a ">"
+                }
+            }
+        }
+        
+        // Pregunta 6: Ordenar de mayor a menor los elementos de posiciones 
+        // multiplos de m
+        public void ordenMayMenPosMulti(int number)
+        {
+            int media = this.cantidad / number;
+            for(int ter1 = 1; ter1 < media; ter1++)
+            {
+                for(int ter2 = ter1 + 1; ter2 <= media; ter2++)
+                {
+                    if(vector[ter2 * number] > vector[ter1 * number])
+                    {
+                        this.intercambio((ter2 * number), (ter1 * number));
+                    }
+                }
+            }
+        }
+
+        // Pregunta 7: eliminar elementos repetidos "Purgar" del vector, debe quedar
+        // solo elemento. *LA PURGAR DEBE SER EN EL MISMO VECTOR*
+        public void elimElemRepet()
+        {
+            int ele, ter1, cont;
+            ter1 = 1; cont = 0;
+            this.ordenSinparametros();
+
+            while(ter1 <= this.cantidad)
+            {
+                ele = vector[ter1];
+                while(ter1 <= this.cantidad && vector[ter1] == ele)
+                {
+                    ter1++;
+                }
+                cont++;
+                vector[cont] = ele;
+            }
+            this.cantidad = cont;
+        }
+
+        // Pregunta 8: Cargar Randomicamente 2 vectores "conjuntos" 
+        // SIN ELEMENTOS REPETIDOS y realizar la union
+        public void unioVectoresSinRepet(classVector vect2, ref classVector vectResult)
+        {
+            for(int ter1 = 1; ter1 <= this.cantidad; ter1++)
+            {
+                vectResult.cargarElexEle(vector[ter1]);
+            }
+            for(int ter2 = 1; ter2 <= vect2.cantidad; ter2++)
+            {
+                if (!(busquedaSecuencial(vect2.vector[ter2])))
+                {
+                    vectResult.cargarElexEle(vect2.vector[ter2]);
                 }
             }
         }

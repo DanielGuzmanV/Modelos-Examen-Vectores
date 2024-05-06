@@ -56,6 +56,69 @@ namespace newVectores2
             textBox5.Text = vec1.descargar();
         }
 
+        private void pregunta5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.elementFrecu(int.Parse(textBox1.Text), int.Parse(textBox2.Text), ref vec2, ref vec3);
+            textBox5.Text = vec2.descargar();
+            textBox6.Text = vec3.descargar();
+        }
+
+        private void pregunta6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.ordenMayMenPosMulti(int.Parse(textBox1.Text));
+            textBox5.Text = vec1.descargar();
+        }
+
+        private void pregunta7ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.elimElemRepet();
+            textBox5.Text = vec1.descargar();
+        }
+
+        private void ordenamientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.ordenSinparametros();
+            textBox5.Text = vec1.descargar();
+        }
+
+        private void cargarRandomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.cargarRandom(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+        }
+
+        private void cargarSinRepetirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1 = new classVector();
+            vec1.cargarSinRepet(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+        }
+
+        private void descargarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            textBox4.Text = vec1.descargar();
+        }
+
+        private void cargarRandomToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            vec2.cargarRandom(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+        }
+
+        private void cargarSinRepetirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            vec2 = new classVector();
+            vec2.cargarSinRepet(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text));
+        }
+
+        private void descargarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            textBox5.Text = vec2.descargar();
+        }
+
+        private void pregunta8ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.unioVectoresSinRepet(vec2, ref vec3);
+            textBox6.Text = vec3.descargar();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             vec1 = new classVector();
