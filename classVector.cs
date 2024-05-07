@@ -351,5 +351,80 @@ namespace newVectores2
                 cambio = !cambio;
             }
         }
+
+        // Pregunta 10: Encontrar el elemento y su frecuencia del elemento que mas se repite
+        // en el rango a y b 
+        // (En el codigo incluimos los elementos mayores iguales, en caso que solo queramos mayores pero no iguale mayor, comentamos "max")
+        public void elemMasFrecu(int ini, int fin, ref classVector vecEle, ref classVector vecFrecu)
+        {
+            vecEle.cantidad = 0;
+            vecFrecu.cantidad = 0;
+
+            int ele, ter, frecu, conta, max;
+            ter = ini; max = 0; conta = 0;
+            this.ordenParametros(ter, fin);
+            while(ter <= fin)
+            {
+                frecu = 0;
+                ele = vector[ter];
+                while(ter <= fin && vector[ter] == ele)
+                {
+                    ter++; frecu++;
+                }
+                if((frecu > max) && (frecu != 1))
+                {
+                    max = frecu;
+                    conta = 0;
+                    conta++;
+                    vecEle.vector[conta] = ele;
+                    vecFrecu.vector[conta] = frecu;
+                }
+                else if((frecu >= max) && (frecu != 1))
+                {
+                    conta++;
+                    vecEle.vector[conta] = ele;
+                    vecFrecu.vector[conta] = frecu;
+                }
+            }
+            vecEle.cantidad = conta;
+            vecFrecu.cantidad = conta;
+        }
+
+        // La pregunta 11 es la mismaa que la pregunta 3
+        // Pregunta 11: eliminar los elementos de posiciones multiplos de m
+        public void elimPosMulti(int number)
+        {
+            int conta, ele;
+            conta = 0; 
+            for(int ter = 1; ter <= this.cantidad; ter++)
+            {
+                ele = ter % number;
+                if (ele != 0)
+                {
+                    conta++;
+                    vector[conta] = vector[ter];
+                }
+            }
+            this.cantidad = conta;
+        }
+
+        // pregunta 12: Encontrar el numero de elementos diferentes del rango a y b
+        public int elemDife(int ini, int fin)
+        {
+            int ele,conta, ter;
+            conta = 0; ter = ini;
+            this.ordenParametros(ter, fin);
+            
+            while(ter <= fin)
+            {
+                ele = vector[ter];
+                while(ter <= fin && vector[ter] == ele)
+                {
+                    ter++;
+                }
+                conta++;
+            }
+            return conta;
+        }
     }
 }

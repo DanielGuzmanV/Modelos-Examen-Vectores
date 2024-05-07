@@ -43,6 +43,7 @@
             this.pregunta6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregunta7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregunta8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarRandomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarSinRepetirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,9 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.pregunta9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta12ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,7 +128,10 @@
             this.pregunta6ToolStripMenuItem,
             this.pregunta7ToolStripMenuItem,
             this.pregunta8ToolStripMenuItem,
-            this.pregunta9ToolStripMenuItem});
+            this.pregunta9ToolStripMenuItem,
+            this.pregunta10ToolStripMenuItem,
+            this.pregunta11ToolStripMenuItem,
+            this.pregunta12ToolStripMenuItem});
             this.modelosDeExamenToolStripMenuItem.Name = "modelosDeExamenToolStripMenuItem";
             this.modelosDeExamenToolStripMenuItem.Size = new System.Drawing.Size(200, 32);
             this.modelosDeExamenToolStripMenuItem.Text = "Modelos de examen";
@@ -133,58 +139,65 @@
             // pregunta1ToolStripMenuItem
             // 
             this.pregunta1ToolStripMenuItem.Name = "pregunta1ToolStripMenuItem";
-            this.pregunta1ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta1ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
             this.pregunta1ToolStripMenuItem.Text = "Pregunta 1";
             this.pregunta1ToolStripMenuItem.Click += new System.EventHandler(this.pregunta1ToolStripMenuItem_Click);
             // 
             // pregunta2ToolStripMenuItem
             // 
             this.pregunta2ToolStripMenuItem.Name = "pregunta2ToolStripMenuItem";
-            this.pregunta2ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta2ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
             this.pregunta2ToolStripMenuItem.Text = "Pregunta 2";
             this.pregunta2ToolStripMenuItem.Click += new System.EventHandler(this.pregunta2ToolStripMenuItem_Click);
             // 
             // pregunta3ToolStripMenuItem
             // 
             this.pregunta3ToolStripMenuItem.Name = "pregunta3ToolStripMenuItem";
-            this.pregunta3ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta3ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
             this.pregunta3ToolStripMenuItem.Text = "Pregunta 3";
             this.pregunta3ToolStripMenuItem.Click += new System.EventHandler(this.pregunta3ToolStripMenuItem_Click);
             // 
             // pregunta4ToolStripMenuItem
             // 
             this.pregunta4ToolStripMenuItem.Name = "pregunta4ToolStripMenuItem";
-            this.pregunta4ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta4ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
             this.pregunta4ToolStripMenuItem.Text = "Pregunta 4";
             this.pregunta4ToolStripMenuItem.Click += new System.EventHandler(this.pregunta4ToolStripMenuItem_Click);
             // 
             // pregunta5ToolStripMenuItem
             // 
             this.pregunta5ToolStripMenuItem.Name = "pregunta5ToolStripMenuItem";
-            this.pregunta5ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta5ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
             this.pregunta5ToolStripMenuItem.Text = "Pregunta 5";
             this.pregunta5ToolStripMenuItem.Click += new System.EventHandler(this.pregunta5ToolStripMenuItem_Click);
             // 
             // pregunta6ToolStripMenuItem
             // 
             this.pregunta6ToolStripMenuItem.Name = "pregunta6ToolStripMenuItem";
-            this.pregunta6ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta6ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
             this.pregunta6ToolStripMenuItem.Text = "Pregunta 6";
             this.pregunta6ToolStripMenuItem.Click += new System.EventHandler(this.pregunta6ToolStripMenuItem_Click);
             // 
             // pregunta7ToolStripMenuItem
             // 
             this.pregunta7ToolStripMenuItem.Name = "pregunta7ToolStripMenuItem";
-            this.pregunta7ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta7ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
             this.pregunta7ToolStripMenuItem.Text = "Pregunta 7";
             this.pregunta7ToolStripMenuItem.Click += new System.EventHandler(this.pregunta7ToolStripMenuItem_Click);
             // 
             // pregunta8ToolStripMenuItem
             // 
             this.pregunta8ToolStripMenuItem.Name = "pregunta8ToolStripMenuItem";
-            this.pregunta8ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
+            this.pregunta8ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
             this.pregunta8ToolStripMenuItem.Text = "Pregunta 8";
             this.pregunta8ToolStripMenuItem.Click += new System.EventHandler(this.pregunta8ToolStripMenuItem_Click);
+            // 
+            // pregunta9ToolStripMenuItem
+            // 
+            this.pregunta9ToolStripMenuItem.Name = "pregunta9ToolStripMenuItem";
+            this.pregunta9ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta9ToolStripMenuItem.Text = "Pregunta 9";
+            this.pregunta9ToolStripMenuItem.Click += new System.EventHandler(this.pregunta9ToolStripMenuItem_Click);
             // 
             // menu1ToolStripMenuItem
             // 
@@ -296,12 +309,26 @@
             this.textBox6.Size = new System.Drawing.Size(511, 30);
             this.textBox6.TabIndex = 7;
             // 
-            // pregunta9ToolStripMenuItem
+            // pregunta10ToolStripMenuItem
             // 
-            this.pregunta9ToolStripMenuItem.Name = "pregunta9ToolStripMenuItem";
-            this.pregunta9ToolStripMenuItem.Size = new System.Drawing.Size(185, 32);
-            this.pregunta9ToolStripMenuItem.Text = "Pregunta 9";
-            this.pregunta9ToolStripMenuItem.Click += new System.EventHandler(this.pregunta9ToolStripMenuItem_Click);
+            this.pregunta10ToolStripMenuItem.Name = "pregunta10ToolStripMenuItem";
+            this.pregunta10ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta10ToolStripMenuItem.Text = "Pregunta 10";
+            this.pregunta10ToolStripMenuItem.Click += new System.EventHandler(this.pregunta10ToolStripMenuItem_Click);
+            // 
+            // pregunta11ToolStripMenuItem
+            // 
+            this.pregunta11ToolStripMenuItem.Name = "pregunta11ToolStripMenuItem";
+            this.pregunta11ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta11ToolStripMenuItem.Text = "Pregunta 11";
+            this.pregunta11ToolStripMenuItem.Click += new System.EventHandler(this.pregunta11ToolStripMenuItem_Click);
+            // 
+            // pregunta12ToolStripMenuItem
+            // 
+            this.pregunta12ToolStripMenuItem.Name = "pregunta12ToolStripMenuItem";
+            this.pregunta12ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta12ToolStripMenuItem.Text = "Pregunta 12";
+            this.pregunta12ToolStripMenuItem.Click += new System.EventHandler(this.pregunta12ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -357,6 +384,9 @@
         private System.Windows.Forms.ToolStripMenuItem descargarToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem pregunta8ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregunta9ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregunta10ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregunta11ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregunta12ToolStripMenuItem;
     }
 }
 

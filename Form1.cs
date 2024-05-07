@@ -125,6 +125,24 @@ namespace newVectores2
             textBox5.Text = vec1.descargar();
         }
 
+        private void pregunta10ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.elemMasFrecu(int.Parse(textBox1.Text), int.Parse(textBox2.Text), ref vec2, ref vec3);
+            textBox5.Text = vec2.descargar();
+            textBox6.Text = vec3.descargar();
+        }
+
+        private void pregunta11ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.elimPosMulti(int.Parse(textBox1.Text));
+            textBox5.Text = vec1.descargar();
+        }
+
+        private void pregunta12ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBox5.Text = string.Concat(vec1.elemDife(int.Parse(textBox1.Text), int.Parse(textBox2.Text)));
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             vec1 = new classVector();
