@@ -124,6 +124,19 @@ namespace newVectores2
             }
         }
 
+        // Funcion auxiliar para encontrar un elemento mayor del vector por parametros
+        public int elemMaximo(int number, int ini, int fin)
+        {
+            for(int posi = ini; posi <= fin; posi++)
+            {
+                if(vector[posi] == number)
+                {
+                    number = vector[posi];
+                }
+            }
+            return number;
+        }
+
         // Modelos de examen *********************************
 
         // Pregunta 1: Encontrar elemento y frecuencia (ordenado de < a >)
@@ -298,6 +311,44 @@ namespace newVectores2
                 {
                     vectResult.cargarElexEle(vect2.vector[ter2]);
                 }
+            }
+        }
+
+        // Pregunta 9: Intecalar mayor y menor del rango a y b
+        // Ejemplo v[4,7|8,6,4,9,3,5,9,3|4,6]
+        //               a             b
+        //         v[4,7|9,3,9,3,8,4,6,5|4,6]
+        //               + - + - + - + -
+        public void interMayMen(int ini, int fin)
+        {
+            bool cambio = true;
+            for(int ter1 = ini; ter1 < fin; ter1++)
+            {
+                if(cambio == true)
+                {
+                    for(int ter2 = ter1 + 1; ter2 <= fin; ter2++)
+                    {
+                        if((elemMaximo(vector[ter2], ini, fin) > 0) && (!(elemMaximo(vector[ter1], ini, fin) > 0)) ||
+                            (elemMaximo(vector[ter2], ini, fin) > 0) && (elemMaximo(vector[ter1], ini, fin) > 0) && (vector[ter2] > vector[ter1])||
+                            (!(elemMaximo(vector[ter2], ini, fin) > 0)) && (!(elemMaximo(vector[ter1], ini, fin) > 0)) && (vector[ter2] < vector[ter1]))
+                        {
+                            this.intercambio(ter2, ter1);
+                        }
+                    }
+                }
+                else
+                {
+                    for (int ter2 = ter1 + 1; ter2 <= fin; ter2++)
+                    {
+                        if ((!(elemMaximo(vector[ter1], ini, fin) > 0)) && (elemMaximo(vector[ter2], ini, fin) > 0) ||
+                            (!(elemMaximo(vector[ter2], ini, fin) > 0)) && (!(elemMaximo(vector[ter1], ini, fin) > 0)) && (vector[ter2] > vector[ter1]) ||
+                            (elemMaximo(vector[ter2], ini, fin) > 0) && (elemMaximo(vector[ter1], ini, fin) > 0) && (vector[ter2] < vector[ter1]))
+                        {
+                            this.intercambio(ter2, ter1);
+                        }
+                    }
+                }
+                cambio = !cambio;
             }
         }
     }

@@ -119,6 +119,12 @@ namespace newVectores2
             textBox6.Text = vec3.descargar();
         }
 
+        private void pregunta9ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.interMayMen(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
+            textBox5.Text = vec1.descargar();
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             vec1 = new classVector();
