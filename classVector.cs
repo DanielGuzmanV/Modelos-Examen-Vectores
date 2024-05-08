@@ -163,30 +163,6 @@ namespace newVectores2
             return respu;
         }
 
-        // Funcion para determinar si es primo o no primo
-        /*public bool elemPrimo(int number, int ini, int fin)
-        {
-            bool respu = false;
-            int conta = 0;
-            int ter = ini; int ter1 = 1;
-            while (ter <= fin)
-            {
-                int ele = vector[number] % ter1;
-
-                if(ele == 0)
-                {
-                    conta++;   
-                }
-                ter++; ter1++;
-            }
-            if (conta == 2)
-            {
-                respu = true;
-            }
-            return respu;
-        }*/
-
-
         // Modelos de examen *********************************
 
         // Pregunta 1: Encontrar elemento y frecuencia (ordenado de < a >)
@@ -527,6 +503,13 @@ namespace newVectores2
                     vecRes.cargarElexEle(vec2.vector[ter]);
                 }
             }
+        }
+
+        // pregunta 17: Examen del 08/05/2024  
+        // ordenar en sentido espiral por parametros
+        public void ordenEspiral()
+        {
+
         }
 
         // *************************************************************************************************
