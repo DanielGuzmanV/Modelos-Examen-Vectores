@@ -34,6 +34,7 @@
             this.descargarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarElexEleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenamientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.esPrimoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modelosDeExamenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregunta1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregunta2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,23 +45,30 @@
             this.pregunta7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregunta8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pregunta9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta12ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarRandomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarSinRepetirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.descargarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargarExeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarRandomToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cargarSinRepetirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.descargarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargarExeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.modelosExamen2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta13ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta14ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta15ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pregunta16ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.pregunta10ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregunta11ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pregunta12ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +78,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuToolStripMenuItem,
             this.modelosDeExamenToolStripMenuItem,
+            this.modelosExamen2ToolStripMenuItem,
             this.menu1ToolStripMenuItem,
             this.menu2ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -84,7 +93,8 @@
             this.cargarToolStripMenuItem,
             this.descargarToolStripMenuItem,
             this.cargarElexEleToolStripMenuItem,
-            this.ordenamientoToolStripMenuItem});
+            this.ordenamientoToolStripMenuItem,
+            this.esPrimoToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(74, 32);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -116,6 +126,13 @@
             this.ordenamientoToolStripMenuItem.Size = new System.Drawing.Size(217, 32);
             this.ordenamientoToolStripMenuItem.Text = "Ordenamiento";
             this.ordenamientoToolStripMenuItem.Click += new System.EventHandler(this.ordenamientoToolStripMenuItem_Click);
+            // 
+            // esPrimoToolStripMenuItem
+            // 
+            this.esPrimoToolStripMenuItem.Name = "esPrimoToolStripMenuItem";
+            this.esPrimoToolStripMenuItem.Size = new System.Drawing.Size(217, 32);
+            this.esPrimoToolStripMenuItem.Text = "es primo";
+            this.esPrimoToolStripMenuItem.Click += new System.EventHandler(this.esPrimoToolStripMenuItem_Click);
             // 
             // modelosDeExamenToolStripMenuItem
             // 
@@ -199,12 +216,34 @@
             this.pregunta9ToolStripMenuItem.Text = "Pregunta 9";
             this.pregunta9ToolStripMenuItem.Click += new System.EventHandler(this.pregunta9ToolStripMenuItem_Click);
             // 
+            // pregunta10ToolStripMenuItem
+            // 
+            this.pregunta10ToolStripMenuItem.Name = "pregunta10ToolStripMenuItem";
+            this.pregunta10ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta10ToolStripMenuItem.Text = "Pregunta 10";
+            this.pregunta10ToolStripMenuItem.Click += new System.EventHandler(this.pregunta10ToolStripMenuItem_Click);
+            // 
+            // pregunta11ToolStripMenuItem
+            // 
+            this.pregunta11ToolStripMenuItem.Name = "pregunta11ToolStripMenuItem";
+            this.pregunta11ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta11ToolStripMenuItem.Text = "Pregunta 11";
+            this.pregunta11ToolStripMenuItem.Click += new System.EventHandler(this.pregunta11ToolStripMenuItem_Click);
+            // 
+            // pregunta12ToolStripMenuItem
+            // 
+            this.pregunta12ToolStripMenuItem.Name = "pregunta12ToolStripMenuItem";
+            this.pregunta12ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta12ToolStripMenuItem.Text = "Pregunta 12";
+            this.pregunta12ToolStripMenuItem.Click += new System.EventHandler(this.pregunta12ToolStripMenuItem_Click);
+            // 
             // menu1ToolStripMenuItem
             // 
             this.menu1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cargarRandomToolStripMenuItem,
             this.cargarSinRepetirToolStripMenuItem,
-            this.descargarToolStripMenuItem1});
+            this.descargarToolStripMenuItem1,
+            this.cargarExeToolStripMenuItem});
             this.menu1ToolStripMenuItem.Name = "menu1ToolStripMenuItem";
             this.menu1ToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
             this.menu1ToolStripMenuItem.Text = "Menu 1";
@@ -230,12 +269,20 @@
             this.descargarToolStripMenuItem1.Text = "descargar";
             this.descargarToolStripMenuItem1.Click += new System.EventHandler(this.descargarToolStripMenuItem1_Click);
             // 
+            // cargarExeToolStripMenuItem
+            // 
+            this.cargarExeToolStripMenuItem.Name = "cargarExeToolStripMenuItem";
+            this.cargarExeToolStripMenuItem.Size = new System.Drawing.Size(240, 32);
+            this.cargarExeToolStripMenuItem.Text = "cargar exe";
+            this.cargarExeToolStripMenuItem.Click += new System.EventHandler(this.cargarExeToolStripMenuItem_Click);
+            // 
             // menu2ToolStripMenuItem
             // 
             this.menu2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cargarRandomToolStripMenuItem1,
             this.cargarSinRepetirToolStripMenuItem1,
-            this.descargarToolStripMenuItem2});
+            this.descargarToolStripMenuItem2,
+            this.cargarExeToolStripMenuItem1});
             this.menu2ToolStripMenuItem.Name = "menu2ToolStripMenuItem";
             this.menu2ToolStripMenuItem.Size = new System.Drawing.Size(90, 32);
             this.menu2ToolStripMenuItem.Text = "Menu 2";
@@ -260,6 +307,52 @@
             this.descargarToolStripMenuItem2.Size = new System.Drawing.Size(247, 32);
             this.descargarToolStripMenuItem2.Text = "Descargar";
             this.descargarToolStripMenuItem2.Click += new System.EventHandler(this.descargarToolStripMenuItem2_Click);
+            // 
+            // cargarExeToolStripMenuItem1
+            // 
+            this.cargarExeToolStripMenuItem1.Name = "cargarExeToolStripMenuItem1";
+            this.cargarExeToolStripMenuItem1.Size = new System.Drawing.Size(247, 32);
+            this.cargarExeToolStripMenuItem1.Text = "cargar exe";
+            this.cargarExeToolStripMenuItem1.Click += new System.EventHandler(this.cargarExeToolStripMenuItem1_Click);
+            // 
+            // modelosExamen2ToolStripMenuItem
+            // 
+            this.modelosExamen2ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pregunta13ToolStripMenuItem,
+            this.pregunta14ToolStripMenuItem,
+            this.pregunta15ToolStripMenuItem,
+            this.pregunta16ToolStripMenuItem});
+            this.modelosExamen2ToolStripMenuItem.Name = "modelosExamen2ToolStripMenuItem";
+            this.modelosExamen2ToolStripMenuItem.Size = new System.Drawing.Size(189, 32);
+            this.modelosExamen2ToolStripMenuItem.Text = "Modelos examen 2";
+            // 
+            // pregunta13ToolStripMenuItem
+            // 
+            this.pregunta13ToolStripMenuItem.Name = "pregunta13ToolStripMenuItem";
+            this.pregunta13ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta13ToolStripMenuItem.Text = "Pregunta 13";
+            this.pregunta13ToolStripMenuItem.Click += new System.EventHandler(this.pregunta13ToolStripMenuItem_Click);
+            // 
+            // pregunta14ToolStripMenuItem
+            // 
+            this.pregunta14ToolStripMenuItem.Name = "pregunta14ToolStripMenuItem";
+            this.pregunta14ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta14ToolStripMenuItem.Text = "Pregunta 14";
+            this.pregunta14ToolStripMenuItem.Click += new System.EventHandler(this.pregunta14ToolStripMenuItem_Click);
+            // 
+            // pregunta15ToolStripMenuItem
+            // 
+            this.pregunta15ToolStripMenuItem.Name = "pregunta15ToolStripMenuItem";
+            this.pregunta15ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta15ToolStripMenuItem.Text = "Pregunta 15";
+            this.pregunta15ToolStripMenuItem.Click += new System.EventHandler(this.pregunta15ToolStripMenuItem_Click);
+            // 
+            // pregunta16ToolStripMenuItem
+            // 
+            this.pregunta16ToolStripMenuItem.Name = "pregunta16ToolStripMenuItem";
+            this.pregunta16ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
+            this.pregunta16ToolStripMenuItem.Text = "Pregunta 16";
+            this.pregunta16ToolStripMenuItem.Click += new System.EventHandler(this.pregunta16ToolStripMenuItem_Click);
             // 
             // textBox1
             // 
@@ -308,27 +401,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(511, 30);
             this.textBox6.TabIndex = 7;
-            // 
-            // pregunta10ToolStripMenuItem
-            // 
-            this.pregunta10ToolStripMenuItem.Name = "pregunta10ToolStripMenuItem";
-            this.pregunta10ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
-            this.pregunta10ToolStripMenuItem.Text = "Pregunta 10";
-            this.pregunta10ToolStripMenuItem.Click += new System.EventHandler(this.pregunta10ToolStripMenuItem_Click);
-            // 
-            // pregunta11ToolStripMenuItem
-            // 
-            this.pregunta11ToolStripMenuItem.Name = "pregunta11ToolStripMenuItem";
-            this.pregunta11ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
-            this.pregunta11ToolStripMenuItem.Text = "Pregunta 11";
-            this.pregunta11ToolStripMenuItem.Click += new System.EventHandler(this.pregunta11ToolStripMenuItem_Click);
-            // 
-            // pregunta12ToolStripMenuItem
-            // 
-            this.pregunta12ToolStripMenuItem.Name = "pregunta12ToolStripMenuItem";
-            this.pregunta12ToolStripMenuItem.Size = new System.Drawing.Size(196, 32);
-            this.pregunta12ToolStripMenuItem.Text = "Pregunta 12";
-            this.pregunta12ToolStripMenuItem.Click += new System.EventHandler(this.pregunta12ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -387,6 +459,14 @@
         private System.Windows.Forms.ToolStripMenuItem pregunta10ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregunta11ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pregunta12ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modelosExamen2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregunta13ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cargarExeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cargarExeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pregunta14ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregunta15ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pregunta16ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem esPrimoToolStripMenuItem;
     }
 }
 

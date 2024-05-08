@@ -143,6 +143,64 @@ namespace newVectores2
             textBox5.Text = string.Concat(vec1.elemDife(int.Parse(textBox1.Text), int.Parse(textBox2.Text)));
         }
 
+        private void pregunta13ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.diferenSimetri(vec2, ref vec3);
+            textBox6.Text = vec3.descargar();
+        }
+
+        private void cargarExeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int ter, cant;
+            vec1 = new classVector();
+            cant = int.Parse(Interaction.InputBox("Ingrese la cantidad: "));
+            for (ter = 1; ter <= cant; ter++)
+            {
+                vec1.cargarElexEle(int.Parse(Interaction.InputBox("Ingrese los elementos: " + ter)));
+            }
+        }
+
+        private void cargarExeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            int ter, cant;
+            vec2 = new classVector();
+            cant = int.Parse(Interaction.InputBox("Ingrese la cantidad: "));
+            for (ter = 1; ter <= cant; ter++)
+            {
+                vec2.cargarElexEle(int.Parse(Interaction.InputBox("Ingrese los elementos: " + ter)));
+            }
+        }
+
+        private void busqueFiboToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //vec1 = new classVector();
+            textBox5.Text = string.Concat(vec1.busquedaFibo(int.Parse(textBox1.Text), int.Parse(textBox2.Text), int.Parse(textBox3.Text)));
+            //textBox5.Text = string.Concat(vec1.busquedaFibo(int.Parse(textBox1.Text)));
+        }
+
+        private void pregunta14ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.segmenFiboNoFibo(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
+            textBox5.Text = vec1.descargar();
+        }
+
+        private void pregunta15ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.elimElemVector(vec2, ref vec3);
+            textBox6.Text = vec3.descargar();
+        }
+
+        private void pregunta16ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            vec1.segmenFiboNoFibo(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
+            textBox5.Text = vec1.descargar();
+        }
+
+        private void esPrimoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //textBox5.Text = string.Concat(vec1.elemPrimo(int.Parse(textBox1.Text)));
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             vec1 = new classVector();

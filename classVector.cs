@@ -137,6 +137,56 @@ namespace newVectores2
             return number;
         }
 
+        // funcion auxiliar busqueda de fibonacci por parametros
+        public bool busquedaFibo(int number, int ini, int fin)
+        {
+            bool respu = false;
+            int ter, varfibo, varA, varB;
+            ter = ini; varfibo = 0; varA = 0; varB = 1;
+
+            while(ter <= fin && respu == false)
+            {
+                varfibo = varA + varB;
+                if(varfibo == number)
+                {
+                    respu = true;
+                }
+                else if(number < varfibo)
+                {
+                    ter++;
+                }
+                else if(number > varfibo)
+                {
+                    varA = varB; varB = varfibo;
+                }
+            }
+            return respu;
+        }
+
+        // Funcion para determinar si es primo o no primo
+        /*public bool elemPrimo(int number, int ini, int fin)
+        {
+            bool respu = false;
+            int conta = 0;
+            int ter = ini; int ter1 = 1;
+            while (ter <= fin)
+            {
+                int ele = vector[number] % ter1;
+
+                if(ele == 0)
+                {
+                    conta++;   
+                }
+                ter++; ter1++;
+            }
+            if (conta == 2)
+            {
+                respu = true;
+            }
+            return respu;
+        }*/
+
+
         // Modelos de examen *********************************
 
         // Pregunta 1: Encontrar elemento y frecuencia (ordenado de < a >)
@@ -425,6 +475,101 @@ namespace newVectores2
                 conta++;
             }
             return conta;
+        }
+        // Pregunta 13: examen del 07/05/2024 
+        // Encontrar la diferencia simetrica del vector A y vector B
+        // A{2,5,3} y B{4,2,3,7} es VR{5,4,7}.
+        public void diferenSimetri(classVector vec2, ref classVector vecRes)
+        {
+            vecRes.cantidad = 0;
+            for(int ter = 1; ter <= this.cantidad; ter++)
+            {
+                if(vec2.busquedaSecuencial(vector[ter]) == false)
+                {
+                    vecRes.cargarElexEle(vector[ter]);
+                }
+            }
+            for(int ter =1; ter <= vec2.cantidad; ter++)
+            {
+                if(busquedaSecuencial(vec2.vector[ter]) == false)
+                {
+                    vecRes.cargarElexEle(vec2.vector[ter]);
+                }
+            }
+        }
+
+        // Pregunta 14: Segmentar en fibonacci y no fibonacci
+        // ordenados ASC y DESC respectivamente, el segmento (rango) a y b
+        public void segmenFiboNoFibo(int ini, int fin)
+        {
+            for(int ter1 = ini; ter1 < fin; ter1++)
+            {
+                for(int ter2 = ter1 + 1; ter2 <= fin; ter2++)
+                {
+                    if((busquedaFibo(vector[ter2], ini, fin)) && (!(busquedaFibo(vector[ter1], ini, fin))) ||
+                        (busquedaFibo(vector[ter2], ini, fin)) && (busquedaFibo(vector[ter1], ini, fin)) && (vector[ter2] < vector[ter1]) ||
+                        (!(busquedaFibo(vector[ter2], ini, fin))) && (!(busquedaFibo(vector[ter1], ini, fin))) && (vector[ter2] > vector[ter1]))
+                    {
+                        this.intercambio(ter2, ter1);
+                    }
+                }
+            }
+        }
+        // Pregunta 15: eliminar elementos del segundo vector, de acuerdo a los
+        // elementos del primer vector
+        public void elimElemVector(classVector vec2, ref classVector vecRes)
+        {
+            vecRes.cantidad = 0;
+            for(int ter = 1; ter <= vec2.cantidad; ter++)
+            {
+                if (busquedaSecuencial(vec2.vector[ter]) == false)
+                {
+                    vecRes.cargarElexEle(vec2.vector[ter]);
+                }
+            }
+        }
+
+        // *************************************************************************************************
+        // NO funciona correctamente (Se tiene que corregir)
+        // Pregunta 16: segmentar en primos y no primos, en el rango a y b
+        // del vector (Primos en forma descendente y no primos de forma ascendente)
+        // **************************************************
+        public bool elemPrimo(int number)
+        {
+            int ele, conta; bool respu = false;
+            int ter1 = 1; conta = 0;
+
+            while(ter1 <= number)
+            {
+                ele = number % ter1;
+                if (ele == 0)
+                {
+                    conta++;
+                }
+            }
+            if(conta == 2)
+            {
+                respu = true;
+            }
+            return respu;
+        }
+            
+        // ****************************************************
+       
+        public void segmentarPrimNoPrim(int ini, int fin)
+        {
+            for(int ter1 = ini; ter1 <= fin; ter1++)
+            {
+                for(int ter2 = ini; ter2 <= fin; ter2++)
+                {
+                    if((elemPrimo(vector[ter2]) == true) && (!(elemPrimo(vector[ter1]) == true)) ||
+                        (elemPrimo(vector[ter2]) == true) && (elemPrimo(vector[ter1]) == true) && (vector[ter2] < vector[ter1]) ||
+                        (!(elemPrimo(vector[ter2]) == true)) && (!(elemPrimo(vector[ter1]) == true)) && (vector[ter2] < vector[ter1]))
+                    {
+                        this.intercambio(ter2, ter1);
+                    }
+                }
+            }
         }
     }
 }
