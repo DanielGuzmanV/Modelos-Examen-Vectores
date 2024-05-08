@@ -5,3 +5,6 @@ App.config
 Form1.resx
 newVectores2.csproj
 newVectores2.sln
+Form1.cs
+Form1.Designer.cs
+Program.cs
