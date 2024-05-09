@@ -116,7 +116,7 @@ namespace newVectores2
             {
                 for (int ter2 = ter1 + 1; ter2 <= this.cantidad; ter2++)
                 {
-                    if(vector[ter2] < vector[ter1])
+                    if(vector[ter2] > vector[ter1])
                     {
                         this.intercambio(ter2, ter1);
                     }
@@ -127,12 +127,16 @@ namespace newVectores2
         // Funcion auxiliar para encontrar un elemento mayor del vector por parametros
         public int elemMaximo(int number, int ini, int fin)
         {
-            for(int posi = ini; posi <= fin; posi++)
+            //bool respu = false;
+            //int posi = ini;
+            for (int posi = ini; posi <= fin; posi++)
             {
-                if(vector[posi] == number)
+                if (vector[posi] > number)
                 {
                     number = vector[posi];
+                    //respu = true;
                 }
+                //posi++;
             }
             return number;
         }
@@ -377,7 +381,22 @@ namespace newVectores2
                 cambio = !cambio;
             }
         }
-
+        // ************************************************
+        // pregunta 9.1: funcion para dar la vuelta a un vector
+        public void invertirVector()
+        {
+            for(int ter1 = 1; ter1 < this.cantidad; ter1++)
+            {
+                for(int ter2 = ter1 + 1; ter2 <= this.cantidad; ter2++)
+                {
+                    if(vector[ter2] > vector[ter1] || vector[ter2] < vector[ter1])
+                    {
+                        intercambio(ter2, ter1);
+                    }
+                }
+            }
+        }
+        // ************************************************
         // Pregunta 10: Encontrar el elemento y su frecuencia del elemento que mas se repite
         // en el rango a y b 
         // (En el codigo incluimos los elementos mayores iguales, en caso que solo queramos mayores pero no iguale mayor, comentamos "max")
@@ -506,10 +525,27 @@ namespace newVectores2
         }
 
         // pregunta 17: Examen del 08/05/2024  
-        // ordenar en sentido espiral por parametros
-        public void ordenEspiral()
+        // ordenar en sentido espiral inverso por parametros
+        // v [3,4 |2,7,1,6,8,3,5|4,7]
+        // vRes [3,4 |2,5,7,8,6,3,1|4,7]
+        public void ordenEspiral(int ini, int fin)
         {
+            int quantity = fin;
+            int half = fin / 2;
+            int idx = ini;
+            int aux;
+            this.ordenParametros(idx, fin);
 
+            while(idx <= half)
+            {
+                aux = vector[idx];
+                for(int idx2 = idx; idx2 < quantity; idx2++)
+                {
+                    vector[idx2] = vector[idx2 + 1];
+                }
+                vector[quantity] = aux;
+                quantity--; idx++;
+            }
         }
 
         // *************************************************************************************************
@@ -529,6 +565,7 @@ namespace newVectores2
                 {
                     conta++;
                 }
+                ter1++;
             }
             if(conta == 2)
             {
@@ -541,12 +578,12 @@ namespace newVectores2
        
         public void segmentarPrimNoPrim(int ini, int fin)
         {
-            for(int ter1 = ini; ter1 <= fin; ter1++)
+            for(int ter1 = ini; ter1 < fin; ter1++)
             {
-                for(int ter2 = ini; ter2 <= fin; ter2++)
+                for(int ter2 = ter1 + 1; ter2 <= fin; ter2++)
                 {
                     if((elemPrimo(vector[ter2]) == true) && (!(elemPrimo(vector[ter1]) == true)) ||
-                        (elemPrimo(vector[ter2]) == true) && (elemPrimo(vector[ter1]) == true) && (vector[ter2] < vector[ter1]) ||
+                        (elemPrimo(vector[ter2]) == true) && (elemPrimo(vector[ter1]) == true) && (vector[ter2] > vector[ter1]) ||
                         (!(elemPrimo(vector[ter2]) == true)) && (!(elemPrimo(vector[ter1]) == true)) && (vector[ter2] < vector[ter1]))
                     {
                         this.intercambio(ter2, ter1);
