@@ -549,7 +549,7 @@ namespace newVectores2
         }
 
         // *************************************************************************************************
-        // NO funciona correctamente (Se tiene que corregir)
+        // funciona correctamente
         // Pregunta 16: segmentar en primos y no primos, en el rango a y b
         // del vector (Primos en forma descendente y no primos de forma ascendente)
         // **************************************************
