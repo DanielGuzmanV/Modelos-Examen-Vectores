@@ -107,8 +107,8 @@ using System.Threading.Tasks;
         {
             int numOrigin, numResult, digito, dato;
             bool respuesta = false;
-            numOrigin = number; numResult = 0;
-            dato = number;
+
+            numOrigin = number; numResult = 0; dato = number;
 
             while (dato > 0)
             {

@@ -116,7 +116,7 @@ namespace newVectores2
             {
                 for (int ter2 = ter1 + 1; ter2 <= this.cantidad; ter2++)
                 {
-                    if(vector[ter2] > vector[ter1])
+                    if(vector[ter2] < vector[ter1])
                     {
                         this.intercambio(ter2, ter1);
                     }
@@ -163,6 +163,28 @@ namespace newVectores2
                 {
                     varA = varB; varB = varfibo;
                 }
+            }
+            return respu;
+        }
+
+        // Funcion auxiliar para encontrar un numero primo
+        public bool elemPrimo(int number)
+        {
+            int ele, conta; bool respu = false;
+            int ter1 = 1; conta = 0;
+
+            while (ter1 <= number)
+            {
+                ele = number % ter1;
+                if (ele == 0)
+                {
+                    conta++;
+                }
+                ter1++;
+            }
+            if (conta == 2)
+            {
+                respu = true;
             }
             return respu;
         }
@@ -524,6 +546,25 @@ namespace newVectores2
             }
         }
 
+        // Pregunta 16: segmentar en primos y no primos, en el rango a y b
+        // del vector (Primos en forma descendente y no primos de forma ascendente)
+        // **********************************************
+        public void segmentarPrimNoPrim(int ini, int fin)
+        {
+            for (int ter1 = ini; ter1 < fin; ter1++)
+            {
+                for (int ter2 = ter1 + 1; ter2 <= fin; ter2++)
+                {
+                    if ((elemPrimo(vector[ter2]) == true) && (!(elemPrimo(vector[ter1]) == true)) ||
+                        (elemPrimo(vector[ter2]) == true) && (elemPrimo(vector[ter1]) == true) && (vector[ter2] > vector[ter1]) ||
+                        (!(elemPrimo(vector[ter2]) == true)) && (!(elemPrimo(vector[ter1]) == true)) && (vector[ter2] < vector[ter1]))
+                    {
+                        this.intercambio(ter2, ter1);
+                    }
+                }
+            }
+        }
+
         // pregunta 17: Examen del 08/05/2024  
         // ordenar en sentido espiral inverso por parametros
         // v [3,4 |2,7,1,6,8,3,5|4,7]
@@ -546,50 +587,112 @@ namespace newVectores2
                 vector[quantity] = aux;
                 quantity--; idx++;
             }
-        }
+        }        
 
-        // *************************************************************************************************
-        // funciona correctamente
-        // Pregunta 16: segmentar en primos y no primos, en el rango a y b
-        // del vector (Primos en forma descendente y no primos de forma ascendente)
-        // **************************************************
-        public bool elemPrimo(int number)
+        // Pregunta 18: examen repechaje 15/05/2024
+        /* Unir dos vectores y el resultado debe estar ordenado
+        v1 [1,1,2,3] ; v2 [1,2,3] => vR [1,1,1,2,2,3,3]
+        */
+        public void unirVectoresOrden(classVector vec2, ref classVector vecRes)
         {
-            int ele, conta; bool respu = false;
-            int ter1 = 1; conta = 0;
-
-            while(ter1 <= number)
+            vecRes.cantidad = 0;
+            int conta1 = 1;
+            for(int idx = 1; idx <= this.cantidad; idx++)
             {
-                ele = number % ter1;
-                if (ele == 0)
-                {
-                    conta++;
-                }
-                ter1++;
+                vecRes.vector[conta1] = vector[idx];
+                conta1++;
             }
-            if(conta == 2)
+            int conta2 = this.cantidad;
+            for(int idx2 = 1; idx2 <= vec2.cantidad; idx2++)
             {
-                respu = true;
+                conta2++;
+                vecRes.vector[conta2] = vec2.vector[idx2];
             }
-            return respu;
+            vecRes.cantidad = this.cantidad + vec2.cantidad;
         }
+
+        // Pregunta 19: Examen repechaje 15/05/2024
+        /* ordenar en espiral por parametros con dos elementos por ejemplo 
+           v[4,|5,1,8,2,6,3|,9] => vecRes [4,|1,2,6,8,5,3|,9]
+
+            Primer metodo sin parametros:
+        */
+
+        public void ordenEspiralSinParan()
+        {
+            this.ordenSinparametros();
+            int aux1, aux2;
+            int media = this.cantidad / 2;
+            int limite = this.cantidad / 2;
+            int cant1 = this.cantidad;
+            int cant2 = this.cantidad - 1;
+            int ter = 1;
+
+            while(ter <= limite / 2)
+            {
+                aux1 = vector[(ter * 2) + 1];
+                aux2 = vector[(ter + 1) * 2];
+
+                for(int idx1 = ter + 1; idx1 <= media - 1; idx1++)
+                {
+                    vector[(idx1 * 2) - 1] = vector[(idx1 * 2) + 1];
+                }
+                for(int idx2 = ter + 1; idx2 <= media - 1; idx2++)
+                {
+                    vector[idx2 * 2] = vector[(idx2 + 1) * 2];
+                }
+                vector[cant1] = aux1;
+                vector[cant2] = aux2;
+                cant1 -= 2; cant2 -= 2;
+                media--; ter++;
+            }
+        }
+        // No funciona correctamente
+        // pregunta del examen donde se tiene que ordenar en forma espiral con dos elementos;
+
+        public void interCam(int number1, int number2)
+        {
+            int var_auxi = vector[number1];
+            vector[number1] = vector[number2];
+            vector[number2] = var_auxi;
+        }
+
+        public void primera_funcion(int date_MinOne, int date_MaxTwo)
+        {
+            for(int idx = date_MaxTwo; idx > date_MinOne; idx--)
+            {
+                if(vector[idx] < vector[idx - 1])
+                {
+                    interCam(idx, idx - 1);
+                }
+            }
+        }
+
+        public void segunda_Funcion(int date_Min, int date_Max)
+        {
+            for(int idx = date_Min; idx < date_Max; idx++)
+            {
+                if(vector[idx] < vector[idx + 1])
+                {
+                    interCam(idx, idx - 1);
+                }
+            }
+        }
+        public void ordenEspiralDosElem(int number1, int number2)
+        {
             
-        // ****************************************************
-       
-        public void segmentarPrimNoPrim(int ini, int fin)
-        {
-            for(int ter1 = ini; ter1 < fin; ter1++)
+            while(number1 <= number2)
             {
-                for(int ter2 = ter1 + 1; ter2 <= fin; ter2++)
-                {
-                    if((elemPrimo(vector[ter2]) == true) && (!(elemPrimo(vector[ter1]) == true)) ||
-                        (elemPrimo(vector[ter2]) == true) && (elemPrimo(vector[ter1]) == true) && (vector[ter2] > vector[ter1]) ||
-                        (!(elemPrimo(vector[ter2]) == true)) && (!(elemPrimo(vector[ter1]) == true)) && (vector[ter2] < vector[ter1]))
-                    {
-                        this.intercambio(ter2, ter1);
-                    }
-                }
+                primera_funcion(number1, number2);
+                primera_funcion(number1 + 1, number2);
+
+                segunda_Funcion(number1 + 2, number2);
+                segunda_Funcion(number1 + 3, number2);
+                number1 += 2;
+                number2 -= 2;
             }
         }
+        // ******************************************************
+       
     }
 }
